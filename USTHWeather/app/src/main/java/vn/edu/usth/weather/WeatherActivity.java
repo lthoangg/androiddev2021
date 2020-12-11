@@ -4,14 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class WeatherActivity extends AppCompatActivity {
     private static final String info_app="USTH Weather App";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(info_app, "onCreate!");
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.weather_activity);
+        ForecastFragment firstFragment = new ForecastFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.weatherActivity, firstFragment, null).commit();
     }
 
     @Override
