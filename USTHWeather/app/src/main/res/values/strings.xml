@@ -2,5 +2,12 @@
     <string name="app_name">USTH Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="first_fragment">First fragment</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="friday">Friday</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
