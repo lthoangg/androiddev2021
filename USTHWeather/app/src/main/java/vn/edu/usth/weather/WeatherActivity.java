@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String info_app="USTH Weather App";
@@ -20,9 +23,11 @@ public class WeatherActivity extends AppCompatActivity {
 //        ForecastFragment firstFragment = new ForecastFragment();
 //        getSupportFragmentManager().beginTransaction().add(R.id.weatherActivity, firstFragment, null).commit();
         PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.weatherActivity);
+        ViewPager viewPager = findViewById(R.id.pager);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(adapter);
+        TabLayout tableLayout = findViewById(R.id.tabLayout);
+        tableLayout.setupWithViewPager(viewPager);
     }
 
     @Override
