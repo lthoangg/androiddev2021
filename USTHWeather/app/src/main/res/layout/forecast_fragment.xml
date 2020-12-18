@@ -1,180 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:scrollbars="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/monday" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:src="@drawable/sun_cloud" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="Partly Cloudy" />
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/monday" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
                 android:layout_weight="1"
-                android:gravity="top"
-                android:text="24-30C" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/tuesday" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:src="@drawable/sun_cloud" />
-
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="Partly Cloudy" />
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/tuesday" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
                 android:layout_weight="1"
-                android:gravity="top"
-                android:text="24-30C" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/wednesday" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:src="@drawable/sun_cloud" />
-
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="Partly Cloudy" />
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/wednesday" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
                 android:layout_weight="1"
-                android:gravity="top"
-                android:text="24-30C" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/thursday" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:src="@drawable/sun_cloud" />
-
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/thursday" />
+
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
                 android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="Partly Cloudy" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/friday" />
+
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
                 android:layout_weight="1"
-                android:gravity="top"
-                android:text="24-30C" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/saturday" />
+
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:gravity="center"
+                android:text="@string/sunday" />
+
+            <ImageView
+                android:layout_width="@dimen/forecast_ele_dim"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:src="@drawable/sun_cloud" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/forecast_ele_dim"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_fragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@string/cloudy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/temporary" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

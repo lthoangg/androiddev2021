@@ -14,13 +14,13 @@
         class="vn.edu.usth.weather.WeatherFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin_fragment"
         android:layout_weight="1" />
 
     <fragment
         class="vn.edu.usth.weather.ForecastFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin_fragment"
         android:layout_weight="1" />
 </LinearLayout>

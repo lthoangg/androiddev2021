@@ -25,4 +25,5 @@ public class WeatherAndForecastFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_weather_and_forecast, container, false);
     }
+
 }

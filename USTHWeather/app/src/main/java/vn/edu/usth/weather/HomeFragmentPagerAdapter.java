@@ -33,8 +33,8 @@ public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
             case 0: return new WeatherAndForecastFragment();
             case 1: return new WeatherAndForecastFragment();
             case 2: return new WeatherAndForecastFragment();
-            default: return new WeatherAndForecastFragment();
         }
+        return new Fragment();
     }
 
     @Override
