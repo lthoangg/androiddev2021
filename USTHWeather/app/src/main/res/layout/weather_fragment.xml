@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
-    android:background="@color/nice_color"
-    tools:context=".WeatherFragment">
+    android:background="@color/nice_color">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -13,7 +12,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:gravity="left"
-        android:text="12C\nStorming" />
+        android:text="12C\nStorming"
+        android:padding="4dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -26,5 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/storming" />
+        android:src="@drawable/storming"
+        android:padding="4dp"/>
 </RelativeLayout>
