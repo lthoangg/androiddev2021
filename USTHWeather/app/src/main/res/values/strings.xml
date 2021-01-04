@@ -19,4 +19,5 @@
     <!-- TODO: Temporary -->
     <string name="temporary">12C</string>
     <string name="hanoi">Hanoi</string>
+    <string name="settings">settings</string>
 </resources>
