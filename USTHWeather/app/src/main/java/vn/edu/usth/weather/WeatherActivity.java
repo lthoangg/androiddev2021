@@ -1,6 +1,8 @@
 package vn.edu.usth.weather;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -8,9 +10,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,6 +28,7 @@ import java.io.OutputStream;
 public class WeatherActivity extends AppCompatActivity {
     private static final String info_app="USTH Weather App";
     MediaPlayer mp;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +43,8 @@ public class WeatherActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         TabLayout tableLayout = findViewById(R.id.tabLayout);
         tableLayout.setupWithViewPager(viewPager);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 
     }
@@ -58,7 +65,7 @@ public class WeatherActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        Log.i("inserted", "Added song to path: " + musicFile.getAbsolutePath());
         mp = MediaPlayer.create(this, R.raw.vedithienduong);
         mp.start();
     }
@@ -85,5 +92,24 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onDestroy() {
         Log.i(info_app, "on Destroy!");
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+            case R.id.settings:
+                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+            default:
+                super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }
