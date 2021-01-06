@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,7 +29,6 @@ import java.io.OutputStream;
 public class WeatherActivity extends AppCompatActivity {
     private static final String info_app="USTH Weather App";
     MediaPlayer mp;
-    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +106,8 @@ public class WeatherActivity extends AppCompatActivity {
             case R.id.refresh:
                 Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
             case R.id.settings:
+                Intent intent = new Intent(this, PrefActivity.class);
+                startActivity(intent);
                 Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
             default:
                 super.onOptionsItemSelected(item);

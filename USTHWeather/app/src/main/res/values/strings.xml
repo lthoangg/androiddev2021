@@ -19,6 +19,6 @@
     <!-- TODO: Temporary -->
     <string name="temporary">12C</string>
     <string name="hanoi">Hanoi</string>
-    <string name="settings">settings</string>
-    <string name="refresh">refresh</string>
+    <string name="settings" translatable="false">settings</string>
+    <string name="refresh" translatable="false">refresh</string>
 </resources>
