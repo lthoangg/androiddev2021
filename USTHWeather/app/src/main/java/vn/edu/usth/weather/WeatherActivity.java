@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.Toast;
 
@@ -30,10 +32,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String info_app="USTH Weather App";
     MediaPlayer mp;
+    HttpURLConnection connection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,25 +60,50 @@ public class WeatherActivity extends AppCompatActivity {
 
 
     }
-    private void downloadImage(){
-        AsyncTask<String, Integer, Bitmap> task = new AsyncTask<String, Integer, Bitmap>() {
+    private void downloadImage() throws IOException {
+        Log.i(info_app, "downloadImage()'ed");
+        AsyncTask<String, Integer, Bitmap> task = new AsyncTask() {
             @Override
-            protected Bitmap doInBackground(String... strings) {
-                try{
-                    Thread.sleep(5000);
-                }
-                catch (InterruptedException e){
+            protected Object doInBackground(Object[] objects) {
+                try {
+                    URL url = new URL("https://usth.edu.vn/uploads/chuong-trinh/2017_01/logo-moi_2.png");
+
+                    // Make a request to server
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setDoInput(true);
+
+                    // Allow reading response code and response dataConnection
+                    connection.connect();
+
+                    // Receive response
+                    int response = connection.getResponseCode();
+                    Log.i("USTHWeather", "The response is: " + response);
+                    InputStream is = connection.getInputStream();
+                    Bitmap bitmap = BitmapFactory.decodeStream(is);
+                    return bitmap;
+
+
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return null;
             }
 
             @Override
-            protected void onPostExecute(Bitmap bitmap) {
+            protected void onPostExecute(Object o) {
+                Bitmap bitmap = (Bitmap) o;
+                ImageView logo = findViewById(R.id.logo);
+                logo.setImageBitmap(bitmap);
+                connection.disconnect();
                 Toast.makeText(getBaseContext(), "I did it again!!!!", Toast.LENGTH_SHORT).show();
             }
         };
-        task.execute("https://www.gannett-cdn.com/-mm-/ae811a38ccb7ca7681c5cd9edc7e0bae36516e06/c=261-0-2174-2550/local/-/media/2015/10/08/Phoenix/Phoenix/635799268539755113-ae-lennon09e.jpg");
+        task.execute("https://usth.edu.vn/uploads/chuong-trinh/2017_01/logo-moi_2.png");
     }
 
     private void sendMessage(String msg) {
@@ -158,7 +190,11 @@ public class WeatherActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.refresh:
 //                sendMessage("I did it");
-                downloadImage();
+                try {
+                    downloadImage();
+                } catch (IOException e) {
+                    Toast.makeText(getBaseContext(), "Failed", Toast.LENGTH_SHORT).show();
+                }
 
                 return true;
             case R.id.settings:
