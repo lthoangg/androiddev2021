@@ -7,7 +7,9 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -49,6 +51,27 @@ public class WeatherActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+    }
+    private void downloadImage(){
+        AsyncTask<String, Integer, Bitmap> task = new AsyncTask<String, Integer, Bitmap>() {
+            @Override
+            protected Bitmap doInBackground(String... strings) {
+                try{
+                    Thread.sleep(5000);
+                }
+                catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Bitmap bitmap) {
+                Toast.makeText(getBaseContext(), "I did it again!!!!", Toast.LENGTH_SHORT).show();
+            }
+        };
+        task.execute("https://www.gannett-cdn.com/-mm-/ae811a38ccb7ca7681c5cd9edc7e0bae36516e06/c=261-0-2174-2550/local/-/media/2015/10/08/Phoenix/Phoenix/635799268539755113-ae-lennon09e.jpg");
     }
 
     private void sendMessage(String msg) {
@@ -134,14 +157,15 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh:
-                sendMessage("I did it");
+//                sendMessage("I did it");
+                downloadImage();
+
                 return true;
             case R.id.settings:
-                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(WeatherActivity.this, PrefActivity.class));
                 return true;
             default:
-                super.onOptionsItemSelected(item);
+                return super.onOptionsItemSelected(item);
         }
-        return false;
     }
 }
